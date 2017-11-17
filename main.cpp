@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
 	
 	/* read the room information */
 	fscanf(input_room, "%d", &room_num);
-	
+	/**/
 	
 	
 	return 0;
