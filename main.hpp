@@ -5,14 +5,11 @@ Date created:	17/11/2017
 Edits:
 *----------------------------------------------------------------------------*/
 
-#define MAX_CLASSROOM	11
+
+#define MAX_CLASSROOM	10
+
 
 /* classroom structure */
-
-
-
-shahaehiid
-
 struct classroom
 {
 	int size;
