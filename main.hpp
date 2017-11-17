@@ -7,11 +7,7 @@ Edits:
 
 
 #define MAX_CLASSROOM	10
-<<<<<<< HEAD
 
-
-=======
->>>>>>> parent of 0b136f2... version 1.0.1
 /* classroom structure */
 struct classroom
 {
