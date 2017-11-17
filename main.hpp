@@ -9,6 +9,9 @@ Edits:
 
 /* classroom structure */
 
+
+
+
 struct classroom
 {
 	int size;
