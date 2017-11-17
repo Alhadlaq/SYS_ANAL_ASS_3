@@ -5,7 +5,7 @@ Date created:	17/11/2017
 Edits:
 *----------------------------------------------------------------------------*/
 
-#define MAX_CLASSROOM	10
+#define MAX_CLASSROOM	100
 
 /* classroom structure */
 
