@@ -7,11 +7,21 @@ Edits:
 
 
 #define MAX_CLASSROOM	10
+#define MAX_COURSES		20	
+#define MAX_ARRAY		128
+	
+enum COURSE_TYPE {CORE, ELECTIVE};
 
 /* classroom structure */
 struct classroom
 {
 	int size;
+};
+
+struct course
+{
+	int type;
+	int number;
 };
 
 /* externals */

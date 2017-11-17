@@ -12,7 +12,8 @@ Edits:
 
 using namespace std;
 
-struct classroom classrooms[MAX_CLASSROOM];
+struct classroom classrooms[MAX_CLASSROOM];		//array of classrooms
+struct course courses[MAX_COURSES];				//array of courses
 
 int main(int argc, char** argv) {
 	int i;					// used in loops
@@ -22,13 +23,17 @@ int main(int argc, char** argv) {
 	int smaple_term;		// sample term to be printed in the output
 	int sample_std;			// student index to be printed in the output
 	int room_num;			// number of classrooms availabe;
+	int course_num;			// number of courses offered
+	char tmp[MAX_ARRAY];	// temporary array to hold info
 	
 	FILE *input_para;		// intput containing general variables
 	FILE *input_room;		//file containing info about the rooms
+	FILE *input_course;		//file containing info about courses
 	
 	/* open the input files */
-	input_para = fopen("input_para.txt", "r");
-	input_room = fopen("input_room.txt", "r");
+	input_para = 	fopen("input_para.txt", "r");
+	input_room = 	fopen("input_room.txt", "r");
+	input_course = 	fopen("input_course.txt", "r");
 	
 	/* read the general variables */
 	fscanf(input_para, "%d", &student_num);
@@ -39,7 +44,20 @@ int main(int argc, char** argv) {
 	
 	/* read the room information */
 	fscanf(input_room, "%d", &room_num);
+	for (i=0; i<room_num; i++)
+	{
+		fscanf(input_room, "%d", &classrooms[i].size);
+	}
 	
+	/* read the course information */
+	fscanf(input_course, "%d", &course_num);
+	fgets(tmp, MAX_ARRAY, input_course);	// ignore the '\n' at the start
+	for (i=0; i<course_num; i++)
+	{
+		fgets(tmp, MAX_ARRAY, input_course);
+		
+	}
+
 	
 	return 0;
 }
