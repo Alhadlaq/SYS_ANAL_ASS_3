@@ -10,7 +10,11 @@ Edits:
 /* classroom structure */
 
 
+<<<<<<< HEAD
 shahaehiid
+=======
+shahaehiih
+>>>>>>> 1b6daf11015ba504dc709da2db5638d473831952
 
 struct classroom
 {
