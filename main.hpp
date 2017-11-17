@@ -6,7 +6,9 @@ Edits:
 *----------------------------------------------------------------------------*/
 
 #define MAX_CLASSROOM	10
+
 /* classroom structure */
+
 struct classroom
 {
 	int size;
