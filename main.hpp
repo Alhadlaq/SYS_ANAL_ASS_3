@@ -5,10 +5,14 @@ Date created:	17/11/2017
 Edits:
 *----------------------------------------------------------------------------*/
 
+#ifndef MAIN_HPP_
+#define MAIN_HPP_
 
 #define MAX_CLASSROOM	10
 #define MAX_COURSES		20	
 #define MAX_ARRAY		128
+#define MAX_PRE_REQ		20
+#define MAX_NAME		16
 	
 enum COURSE_TYPE {CORE, ELECTIVE};
 
@@ -20,9 +24,22 @@ struct classroom
 
 struct course
 {
+	char name[MAX_NAME];
 	int type;
 	int number;
+	int pre_req[MAX_PRE_REQ];
+	int pre_req_num;
 };
 
 /* externals */
-extern struct classroom classrooms[MAX_CLASSROOM];
+extern struct classroom classrooms[MAX_CLASSROOM];		//array of classrooms
+extern struct course courses[MAX_COURSES];				//array of courses
+extern int student_num;			// number of students enrolled in the university
+extern int term_num;			// number of terms to simulate
+extern int needed_c;			// number of core course needed to graduate
+extern int smaple_term;			// sample term to be printed in the output
+extern int sample_std;			// student index to be printed in the output
+extern int room_num;			// number of classrooms availabe
+extern int course_num;			// number of courses offered
+
+#endif /* MAIN_HPP_ */
