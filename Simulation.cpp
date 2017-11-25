@@ -13,6 +13,7 @@ Edits:
 int pool_sz;				// size of the mandatory pool
 int mand_pool[MAX_COURSES];	// indexes of courses in mandatory pool
 int elecs_in_pool;			// number of electives in the mandatory pool
+struct student students[MAX_STUDENTS];	// student database
 
 void start_simulation (void)
 {
@@ -20,6 +21,66 @@ void start_simulation (void)
 	 *This pool contains the core corses in addition to all the pre-
 	 *requisits to these core courses*/
 	create_mandatory_pool();
+
+
+}
+
+void advise_students(void)
+{
+	int i, j, course;
+
+	// for each student
+	for (i = 0; i < student_num; i++)
+	{
+		// go through all the mandatory courses
+		for (j = 0; j < pool_sz; j++)
+		{
+			course = mand_pool[j];
+			if (is_taken(course, i) || !pre_reqs_taken(course, i)/* || if it's already registered*/)
+				continue;
+
+
+		}
+	}
+	
+	/*if the course is: not taken by the student
+						& not already registered
+						& the pre-requisits are taken by student
+	Then advise the student to take this course*/
+
+}
+
+int pre_reqs_taken(int course, int student)
+{
+	int i, j;
+	int taken;
+
+	for (i = 0; i < courses[course].pre_req_num; i++)
+	{
+		taken = FALSE;
+		for (j = 0; j < students[student].taken_num; j++)
+		{
+			if (students[student].taken_courses[j] == courses[course].pre_req[i])
+			{
+				taken = TRUE;
+				break;
+			}
+		}
+		if (!taken)
+			return FALSE;
+	}
+	return TRUE;
+}
+
+int is_taken(int course, int student)
+{
+	int i;
+	for (i = 0; i < students[student].taken_num; i++)
+	{
+		if (students[student].taken_courses[i] == course)
+			return TRUE;
+	}
+	return FALSE;
 }
 
 void create_mandatory_pool(void)

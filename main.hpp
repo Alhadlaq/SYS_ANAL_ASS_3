@@ -13,6 +13,7 @@ Edits:
 #define MAX_ARRAY		128
 #define MAX_PRE_REQ		20
 #define MAX_NAME		16
+#define MAX_STUDENTS	1000
 	
 enum COURSE_TYPE {CORE, ELECTIVE};
 
