@@ -14,6 +14,8 @@ Edits:
 #define MAX_PRE_REQ		20
 #define MAX_NAME		16
 #define MAX_STUDENTS	1000
+#define MAX_TERMS		20
+#define MAX_ITERATIONS	MAX_COURSES
 	
 enum COURSE_TYPE {CORE, ELECTIVE};
 
@@ -30,6 +32,8 @@ struct course
 	int number;
 	int pre_req[MAX_PRE_REQ];
 	int pre_req_num;
+	int demand[MAX_TERMS][MAX_ITERATIONS];
+	int registered[MAX_TERMS];
 };
 
 /* externals */

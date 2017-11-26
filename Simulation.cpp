@@ -13,41 +13,127 @@ Edits:
 int pool_sz;				// size of the mandatory pool
 int mand_pool[MAX_COURSES];	// indexes of courses in mandatory pool
 int elecs_in_pool;			// number of electives in the mandatory pool
+int current_term;			// current term number
+int current_itr;			// curent iteration number
+int itr_num[MAX_TERMS];		// to keep track of the number of iterations each term
 struct student students[MAX_STUDENTS];	// student database
 
-void start_simulation (void)
+void start_simulation(void)
 {
 	/*create the mandatory pool that the undergarduate office will use.
 	 *This pool contains the core corses in addition to all the pre-
 	 *requisits to these core courses*/
 	create_mandatory_pool();
 
-
-}
-
-void advise_students(void)
-{
-	int i, j, course;
-
-	// for each student
-	for (i = 0; i < student_num; i++)
+	for (current_term = 0; current_term < term_num; current_term++)
 	{
-		// go through all the mandatory courses
-		for (j = 0; j < pool_sz; j++)
+		for (current_itr = 0; current_itr < MAX_ITERATIONS; current_itr++)
 		{
-			course = mand_pool[j];
-			if (is_taken(course, i) || !pre_reqs_taken(course, i)/* || if it's already registered*/)
+			itr_num[current_term] = current_itr;
+
+			// advise all the students on what course to take
+			advise_students();
+
+			// if there is no demand for courses, then go to the next term
+			if (no_demand())
 				continue;
+
+			// register the course of the highest demand
+
+			// if no more courses are available, or no classrooms
 
 
 		}
 	}
-	
-	/*if the course is: not taken by the student
-						& not already registered
-						& the pre-requisits are taken by student
-	Then advise the student to take this course*/
+}
 
+int no_demand(void)
+{
+	int i;
+	for (i = 0; i < student_num; i++)
+	{
+		if (students[i].term_tbl[current_term][current_itr].course != NO_COURSE)
+			return FALSE;
+	}
+	return TRUE;
+}
+
+void register_course(void)
+{
+	int i, crs;
+	int hd_crs = 0;	// course of the highest demand
+
+	// find the course of the highest demand
+	for (i = 0; i < course_num; i++)
+	{
+		if (courses[i].demand[current_term][current_itr] > courses[hd_crs].demand[current_term][current_itr])
+		{
+			hd_crs = i;
+			break;
+		}
+	}
+
+
+	// find the classroom that best fits the students
+	// it should be the smaller classroom that can fit the students
+	// and at the same time has the least time conflicts
+
+	// register the course in that room
+
+	// select the accepted students
+	// the unaccepted studetnss are rejected because either the room
+	// is too small or it contradicts their time schedule
+}
+
+void advise_students(void)
+{
+	int i, j, course, course_found;
+
+	// for each student
+	for (i = 0; i < student_num; i++)
+	{
+		if (taking_full_load(i, current_term))
+		{
+			students[i].term_tbl[current_term][current_itr].course = NO_COURSE;
+			continue;
+		}
+
+		course_found = 0;
+		// go through all the mandatory courses
+		for (j = 0; j < pool_sz; j++)
+		{
+			course = mand_pool[j];
+			/*if the course is: not taken by the student
+			& not already registered
+			& the pre-requisits are taken by student
+			Then advise the student to take this course*/
+			if (!is_taken(course, i) && pre_reqs_taken(course, i) && !courses[course].registered)
+			{
+				students[i].term_tbl[current_term][current_itr].course = course;
+				courses[course].demand[current_term][current_itr]++;
+				course_found = 1;
+				break;
+			}
+		}
+		// if no course is found, then dont advise the student
+		if (!course_found)
+			students[i].term_tbl[current_term][current_itr].course = NO_COURSE;
+	}
+}
+
+int taking_full_load(int student, int term)
+{
+	int i, sum=0, result = FALSE;
+
+	for (i = 0; i < itr_num[term]; i++)
+	{
+		sum += students[student].term_tbl[term][i].selected;
+	}
+
+	if (sum == FULL_LOAD)
+		result = TRUE;
+
+	return result;
 }
 
 int pre_reqs_taken(int course, int student)
