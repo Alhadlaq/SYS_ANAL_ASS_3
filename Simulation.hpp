@@ -32,5 +32,6 @@ void print_tuition (FILE *out);
 void print_sample_std (FILE *out);
 void university_time_table(FILE *out);
 void courses_taken_by_students (FILE *out);
+int is_graduated (int student);
 
 #endif

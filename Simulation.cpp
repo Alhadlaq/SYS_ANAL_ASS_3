@@ -209,10 +209,37 @@ void printf_graduated_students(FILE *out)
     int i, sum=0;
     for (i=0; i<student_num; i++)
     {
-        if (students[i].taken_num == needed_c)
+        if (is_graduated(i))
             sum ++;
     }
     fprintf(out, "Number of graduated students = %d\n\n", sum);
+}
+
+int is_graduated (int student)
+{
+    int i, j, taken;
+    
+    // check to see if a student has taken all the courses in the mandatory pool
+    for (i=0; i<pool_sz; i++)
+    {
+        taken = FALSE;
+        for (j=0; j<students[student].taken_num; j++)
+        {
+            if (mand_pool[i] == students[student].taken_courses[j].crs_num)
+            {
+                taken = TRUE;
+                break;
+            }
+        }
+        if (!taken)
+            return FALSE;
+    }
+    
+    // check to see if the student has taken all the required electives
+    if (students[student].elects_taken < MIN_ELECS)
+        return FALSE;
+    
+    return TRUE;
 }
 
 void building_manager(void)
@@ -448,7 +475,7 @@ void advise_students(void)
 		/* if the student has taken the required number to graduate
 		or if the student is taking a full load
 		then dont advise the student to take any course and go to the next student */
-		if (taking_full_load(i, current_term) || (students[i].taken_num == needed_c))
+		if (taking_full_load(i, current_term) || is_graduated(i))
 		{
 			students[i].term_tbl[current_term][current_itr].course = NO_COURSE;
 			continue;
@@ -473,7 +500,7 @@ void advise_students(void)
 		}
 
 		// if the mandatory pool does not contain enough electives and no course is assigned from the pool
-		if ((!course_found) && (elecs_in_pool < MIN_ELECS))
+		if ((!course_found) && (elecs_in_pool < MIN_ELECS) && (students[i].elects_taken < MIN_ELECS))
 		{
 			//give the student any available elective course
 			for (course = 0; course < course_num; course++)
