@@ -19,7 +19,7 @@ struct course courses[MAX_COURSES];				//array of courses
 int student_num;		// number of students enrolled in the university
 int term_num;			// number of terms to simulate
 int needed_c;			// number of core course needed to graduate
-int smaple_term;		// sample term to be printed in the output
+int sample_term;		// sample term to be printed in the output
 int sample_std;			// student index to be printed in the output
 int room_num;			// number of classrooms availabe
 int course_num;			// number of courses offered
@@ -30,7 +30,7 @@ void read_general_variables(FILE *input_file)
 	fscanf(input_file, "%d", &student_num);
 	fscanf(input_file, "%d", &term_num);
 	fscanf(input_file, "%d", &needed_c);
-	fscanf(input_file, "%d", &smaple_term);
+	fscanf(input_file, "%d", &sample_term);
 	fscanf(input_file, "%d", &sample_std);
 }
 
@@ -96,7 +96,6 @@ void read_course_info(FILE *input_file)
 }
 
 int main(int argc, char** argv) {
-	
 	
 	FILE *input_para;		//intput containing general variables
 	FILE *input_room;		//file containing info about the rooms

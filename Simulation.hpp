@@ -9,27 +9,6 @@ Edits:
 #ifndef SIMULATION_HPP_
 #define SIMULATION_HPP_
 
-#define TRUE		1
-#define FALSE		0
-
-#define NO_COURSE	-1
-#define FULL_LOAD	2
-
-struct iteration
-{
-	int course;
-	int selected;
-};
-
-struct student
-{
-	int taken_courses[MAX_COURSES];	// indexes to the taken courses
-	int taken_num;					// number of taken courses
-	int elects_taken;				// number of electives taken
-	/*table of all the suggestions for the student and the registrations*/
-	struct iteration term_tbl[MAX_TERMS][MAX_ITERATIONS];
-};
-
 /*function prototypes*/
 void start_simulation(void);
 void create_mandatory_pool(void);
@@ -40,5 +19,18 @@ int is_taken(int course, int student);
 int pre_reqs_taken(int course, int student);
 void register_course(void);
 int taking_full_load(int student, int term);
+int no_demand(void);
+int find_room(int demand);
+int no_available_courses(void);
+int no_available_rooms(void);
+void print_term_table(FILE *out);
+void building_manager(void);
+void remove_course(int student, int room, int slot, int course);
+void print_reports();
+void printf_graduated_students(FILE *out);
+void print_tuition (FILE *out);
+void print_sample_std (FILE *out);
+void university_time_table(FILE *out);
+void courses_taken_by_students (FILE *out);
 
 #endif
