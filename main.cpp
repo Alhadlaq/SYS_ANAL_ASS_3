@@ -32,6 +32,8 @@ void read_general_variables(FILE *input_file)
 	fscanf(input_file, "%d", &needed_c);
 	fscanf(input_file, "%d", &sample_term);
 	fscanf(input_file, "%d", &sample_std);
+    sample_term--;
+    sample_std--;
 }
 
 void read_room_info(FILE *input_file)

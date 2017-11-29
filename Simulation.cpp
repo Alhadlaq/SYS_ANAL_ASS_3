@@ -114,11 +114,11 @@ void courses_taken_by_students (FILE *out)
         // when we get out of this for loop h_std will be the student with the highest courses
         
         print_flg[h_std] = TRUE;
-        fprintf(out, "Student B%d:\n", h_std);
+        fprintf(out, "Student B%d:\n", h_std+1);
         for (j=0; j<students[h_std].taken_num; j++)
         {
             crs = students[h_std].taken_courses[j].crs_num;
-            fprintf(out, "Term%d:\t%s\n", students[h_std].taken_courses[j].term_num, courses[crs].name);
+            fprintf(out, "Term%d:\t%s\n", students[h_std].taken_courses[j].term_num+1, courses[crs].name);
         }
         fprintf(out, "\n");
     }
@@ -132,11 +132,11 @@ void university_time_table(FILE *out)
     fprintf(out, "Full university time table:\n\n");
     for (i=0; i<term_num; i++)
     {
-        fprintf(out, "Term %d:\n", i);
+        fprintf(out, "Term %d:\n", i+1);
         fprintf(out, "Classroom number\tSize\tMorning class\tStudents\tAfternoon class\tStudents\n");
         for (j=0; j<room_num; j++)
         {
-            fprintf(out, "Room %d", j);
+            fprintf(out, "Room %d", j+1);
             fprintf(out, "\t\t\t%d", classrooms[j].size);
             for (x=0; x<TIME_SLOT_NUM; x++)
             {
@@ -165,7 +165,7 @@ void print_sample_std (FILE *out)
 {
     int i, crs;
     char name[MAX_NAME];
-    fprintf(out, "The sample student B%d in the sample term %d has the following suggestions:\n", sample_std, sample_term);
+    fprintf(out, "The sample student B%d in the sample term %d has the following suggestions:\n", sample_std+1, sample_term+1);
     for (i=0; i<itr_num[sample_term]; i++)
     {
         crs = students[sample_std].term_tbl[sample_term][i].course;
@@ -173,7 +173,7 @@ void print_sample_std (FILE *out)
             strcpy(name, courses[crs].name);
         else
             strcpy(name, "NONE");
-        fprintf(out, "Iteration %d:\tw:%s\t\ts:%d\n", i, name,
+        fprintf(out, "Iteration %d:\tw:%s\t\ts:%d\n", i+1, name,
                 students[sample_std].term_tbl[sample_term][i].selected);
     }
     fprintf(out, "\n");
@@ -199,7 +199,7 @@ void print_tuition (FILE *out)
     fprintf(out, "The tuitions per term are:\n");
     for (i=0; i<term_num; i++)
     {
-        fprintf(out, "Term %d: %d\n", i, tuition[i]);
+        fprintf(out, "Term %d: %d\n", i+1, tuition[i]);
     }
     fprintf(out, "\n");
 }
@@ -308,14 +308,14 @@ void print_term_table(FILE *out)
 	char name[MAX_NAME];
 	for (i = 0; i < term_num; i++)
 	{
-		fprintf(out, "Term %d\n", i);
+		fprintf(out, "Term %d\n", i+1);
 		fprintf(out, "student number");
 		for (j = 0; j < itr_num[i]; j++)
-			fprintf(out, "\titeration number %d", j);
+			fprintf(out, "\titeration number %d", j+1);
 		fprintf(out, "\n");
 		for (x = 0; x < student_num; x++)
 		{
-			fprintf(out, "B%d\t\t", x);
+			fprintf(out, "B%d\t\t", x+1);
 			for (j = 0; j < itr_num[i];j++)
 			{
 				if (students[x].term_tbl[i][j].course != NO_COURSE)
