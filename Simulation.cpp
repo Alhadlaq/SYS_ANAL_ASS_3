@@ -68,7 +68,6 @@ void start_simulation(void)
 void print_reports()
 {
     FILE *output = fopen("output.txt", "w");
-    FILE *output2 = fopen("students_out.txt", "w");
     printf_graduated_students(output);
     fprintf(output, "-----------------------------------------------------------------\n");
     print_tuition(output);
@@ -77,7 +76,7 @@ void print_reports()
     fprintf(output, "-----------------------------------------------------------------\n");
     university_time_table(output);
     fprintf(output, "-----------------------------------------------------------------\n");
-    courses_taken_by_students(output2);
+    courses_taken_by_students(output);
 }
 
 void courses_taken_by_students (FILE *out)

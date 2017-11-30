@@ -107,8 +107,8 @@ int main(int argc, char** argv) {
 	
 	/* open the input files */
 	input_para = 	fopen("input_para.txt", "r");
-	input_room = 	fopen("input_room.txt", "r");
-	input_course = 	fopen("input_course.txt", "r");
+	input_room = 	fopen("input_rooms.txt", "r");
+	input_course = 	fopen("input_courses.txt", "r");
 	
 	/* read the general variables */
 	read_general_variables(input_para);
