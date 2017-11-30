@@ -119,6 +119,7 @@ void courses_taken_by_students (FILE *out)
             crs = students[h_std].taken_courses[j].crs_num;
             fprintf(out, "Term%d:\t%s\n", students[h_std].taken_courses[j].term_num+1, courses[crs].name);
         }
+        if(is_graduated(h_std)){fprintf(out, "Graduated\n");}
         fprintf(out, "\n");
     }
 }

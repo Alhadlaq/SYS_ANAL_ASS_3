@@ -1,0 +1,893 @@
+Number of graduated students = 10
+
+-----------------------------------------------------------------
+The tuitions per term are:
+Term 1: 55
+Term 2: 60
+Term 3: 60
+Term 4: 60
+
+-----------------------------------------------------------------
+The sample student B2 in the sample term 1 has the following suggestions:
+Iteration 1:	w:c1		s:1
+Iteration 2:	w:e1		s:1
+Iteration 3:	w:NONE		s:0
+Iteration 4:	w:NONE		s:0
+Iteration 5:	w:NONE		s:0
+Iteration 6:	w:NONE		s:0
+
+-----------------------------------------------------------------
+Full university time table:
+
+Term 1:
+Classroom number	Size	Morning class	Students	Afternoon class	Students
+Room 1			15	c1		15		e1		15	
+Room 2			10	e2		10		e3		10	
+Room 3			5	e4		5		NONE		0	
+
+Term 2:
+Classroom number	Size	Morning class	Students	Afternoon class	Students
+Room 1			15	c1		15		e1		15	
+Room 2			10	e2		10		e3		10	
+Room 3			5	e4		5		c2		5	
+
+Term 3:
+Classroom number	Size	Morning class	Students	Afternoon class	Students
+Room 1			15	c1		15		e1		15	
+Room 2			10	e2		10		e3		10	
+Room 3			5	e4		5		c2		5	
+
+Term 4:
+Classroom number	Size	Morning class	Students	Afternoon class	Students
+Room 1			15	c1		15		e1		15	
+Room 2			10	e2		10		e3		10	
+Room 3			5	e4		5		c2		5	
+
+
+-----------------------------------------------------------------
+The courses taken by each student in each term:
+Student B1:
+Term1:	c1
+Term1:	e1
+Term2:	c2
+Term3:	e2
+Graduated
+
+Student B2:
+Term1:	c1
+Term1:	e1
+Term2:	c2
+Term3:	e2
+Graduated
+
+Student B3:
+Term1:	c1
+Term1:	e1
+Term2:	c2
+Term3:	e2
+Graduated
+
+Student B4:
+Term1:	c1
+Term1:	e1
+Term2:	c2
+Term3:	e2
+Graduated
+
+Student B5:
+Term1:	c1
+Term1:	e1
+Term2:	c2
+Term3:	e2
+Graduated
+
+Student B6:
+Term1:	c1
+Term1:	e1
+Term3:	c2
+Term4:	e2
+Graduated
+
+Student B7:
+Term1:	c1
+Term1:	e1
+Term3:	c2
+Term4:	e2
+Graduated
+
+Student B8:
+Term1:	c1
+Term1:	e1
+Term3:	c2
+Term4:	e2
+Graduated
+
+Student B9:
+Term1:	c1
+Term1:	e1
+Term3:	c2
+Term4:	e2
+Graduated
+
+Student B10:
+Term1:	c1
+Term1:	e1
+Term3:	c2
+Term4:	e2
+Graduated
+
+Student B11:
+Term1:	c1
+Term1:	e1
+Term4:	c2
+
+Student B12:
+Term1:	c1
+Term1:	e1
+Term4:	c2
+
+Student B13:
+Term1:	c1
+Term1:	e1
+Term4:	c2
+
+Student B14:
+Term1:	c1
+Term1:	e1
+Term4:	c2
+
+Student B15:
+Term1:	c1
+Term1:	e1
+Term4:	c2
+
+Student B16:
+Term1:	e2
+Term1:	e3
+Term2:	c1
+
+Student B17:
+Term1:	e2
+Term1:	e3
+Term2:	c1
+
+Student B18:
+Term1:	e2
+Term1:	e3
+Term2:	c1
+
+Student B19:
+Term1:	e2
+Term1:	e3
+Term2:	c1
+
+Student B20:
+Term1:	e2
+Term1:	e3
+Term2:	c1
+
+Student B21:
+Term1:	e2
+Term1:	e3
+Term2:	c1
+
+Student B22:
+Term1:	e2
+Term1:	e3
+Term2:	c1
+
+Student B23:
+Term1:	e2
+Term1:	e3
+Term2:	c1
+
+Student B24:
+Term1:	e2
+Term1:	e3
+Term2:	c1
+
+Student B25:
+Term1:	e2
+Term1:	e3
+Term2:	c1
+
+Student B26:
+Term1:	e4
+Term2:	c1
+Term2:	e1
+
+Student B27:
+Term1:	e4
+Term2:	c1
+Term2:	e1
+
+Student B28:
+Term1:	e4
+Term2:	c1
+Term2:	e1
+
+Student B29:
+Term1:	e4
+Term2:	c1
+Term2:	e1
+
+Student B30:
+Term1:	e4
+Term2:	c1
+Term2:	e1
+
+Student B31:
+Term2:	e1
+Term2:	e2
+Term3:	c1
+
+Student B32:
+Term2:	e1
+Term2:	e2
+Term3:	c1
+
+Student B33:
+Term2:	e1
+Term2:	e2
+Term3:	c1
+
+Student B34:
+Term2:	e1
+Term2:	e2
+Term3:	c1
+
+Student B35:
+Term2:	e1
+Term2:	e2
+Term3:	c1
+
+Student B36:
+Term2:	e1
+Term2:	e2
+Term3:	c1
+
+Student B37:
+Term2:	e1
+Term2:	e2
+Term3:	c1
+
+Student B38:
+Term2:	e1
+Term2:	e2
+Term3:	c1
+
+Student B39:
+Term2:	e1
+Term2:	e2
+Term3:	c1
+
+Student B40:
+Term2:	e1
+Term2:	e2
+Term3:	c1
+
+Student B41:
+Term2:	e3
+Term2:	e4
+Term3:	c1
+
+Student B42:
+Term2:	e3
+Term2:	e4
+Term3:	c1
+
+Student B43:
+Term2:	e3
+Term2:	e4
+Term3:	c1
+
+Student B44:
+Term2:	e3
+Term2:	e4
+Term3:	c1
+
+Student B45:
+Term2:	e3
+Term2:	e4
+Term3:	c1
+
+Student B46:
+Term2:	e3
+Term3:	e1
+Term4:	c1
+
+Student B47:
+Term2:	e3
+Term3:	e1
+Term4:	c1
+
+Student B48:
+Term2:	e3
+Term3:	e1
+Term4:	c1
+
+Student B49:
+Term2:	e3
+Term3:	e1
+Term4:	c1
+
+Student B50:
+Term2:	e3
+Term3:	e1
+Term4:	c1
+
+Student B51:
+Term3:	e1
+Term3:	e2
+Term4:	c1
+
+Student B52:
+Term3:	e1
+Term3:	e2
+Term4:	c1
+
+Student B53:
+Term3:	e1
+Term3:	e2
+Term4:	c1
+
+Student B54:
+Term3:	e1
+Term3:	e2
+Term4:	c1
+
+Student B55:
+Term3:	e1
+Term3:	e2
+Term4:	c1
+
+Student B56:
+Term3:	e1
+Term3:	e4
+Term4:	c1
+
+Student B57:
+Term3:	e1
+Term3:	e4
+Term4:	c1
+
+Student B58:
+Term3:	e1
+Term3:	e4
+Term4:	c1
+
+Student B59:
+Term3:	e1
+Term3:	e4
+Term4:	c1
+
+Student B60:
+Term3:	e1
+Term3:	e4
+Term4:	c1
+
+Student B61:
+Term3:	e3
+Term4:	e1
+
+Student B62:
+Term3:	e3
+Term4:	e1
+
+Student B63:
+Term3:	e3
+Term4:	e1
+
+Student B64:
+Term3:	e3
+Term4:	e1
+
+Student B65:
+Term3:	e3
+Term4:	e1
+
+Student B66:
+Term3:	e3
+Term4:	e1
+
+Student B67:
+Term3:	e3
+Term4:	e1
+
+Student B68:
+Term3:	e3
+Term4:	e1
+
+Student B69:
+Term3:	e3
+Term4:	e1
+
+Student B70:
+Term3:	e3
+Term4:	e1
+
+Student B71:
+Term4:	e1
+Term4:	e2
+
+Student B72:
+Term4:	e1
+Term4:	e2
+
+Student B73:
+Term4:	e1
+Term4:	e2
+
+Student B74:
+Term4:	e1
+Term4:	e2
+
+Student B75:
+Term4:	e1
+Term4:	e2
+
+Student B76:
+Term4:	e3
+Term4:	e4
+
+Student B77:
+Term4:	e3
+Term4:	e4
+
+Student B78:
+Term4:	e3
+Term4:	e4
+
+Student B79:
+Term4:	e3
+Term4:	e4
+
+Student B80:
+Term4:	e3
+Term4:	e4
+
+Student B81:
+Term4:	e3
+
+Student B82:
+Term4:	e3
+
+Student B83:
+Term4:	e3
+
+Student B84:
+Term4:	e3
+
+Student B85:
+Term4:	e3
+
+Student B86:
+
+Student B87:
+
+Student B88:
+
+Student B89:
+
+Student B90:
+
+Student B91:
+
+Student B92:
+
+Student B93:
+
+Student B94:
+
+Student B95:
+
+Student B96:
+
+Student B97:
+
+Student B98:
+
+Student B99:
+
+Student B100:
+
+Student B101:
+
+Student B102:
+
+Student B103:
+
+Student B104:
+
+Student B105:
+
+Student B106:
+
+Student B107:
+
+Student B108:
+
+Student B109:
+
+Student B110:
+
+Student B111:
+
+Student B112:
+
+Student B113:
+
+Student B114:
+
+Student B115:
+
+Student B116:
+
+Student B117:
+
+Student B118:
+
+Student B119:
+
+Student B120:
+
+Student B121:
+
+Student B122:
+
+Student B123:
+
+Student B124:
+
+Student B125:
+
+Student B126:
+
+Student B127:
+
+Student B128:
+
+Student B129:
+
+Student B130:
+
+Student B131:
+
+Student B132:
+
+Student B133:
+
+Student B134:
+
+Student B135:
+
+Student B136:
+
+Student B137:
+
+Student B138:
+
+Student B139:
+
+Student B140:
+
+Student B141:
+
+Student B142:
+
+Student B143:
+
+Student B144:
+
+Student B145:
+
+Student B146:
+
+Student B147:
+
+Student B148:
+
+Student B149:
+
+Student B150:
+
+Student B151:
+
+Student B152:
+
+Student B153:
+
+Student B154:
+
+Student B155:
+
+Student B156:
+
+Student B157:
+
+Student B158:
+
+Student B159:
+
+Student B160:
+
+Student B161:
+
+Student B162:
+
+Student B163:
+
+Student B164:
+
+Student B165:
+
+Student B166:
+
+Student B167:
+
+Student B168:
+
+Student B169:
+
+Student B170:
+
+Student B171:
+
+Student B172:
+
+Student B173:
+
+Student B174:
+
+Student B175:
+
+Student B176:
+
+Student B177:
+
+Student B178:
+
+Student B179:
+
+Student B180:
+
+Student B181:
+
+Student B182:
+
+Student B183:
+
+Student B184:
+
+Student B185:
+
+Student B186:
+
+Student B187:
+
+Student B188:
+
+Student B189:
+
+Student B190:
+
+Student B191:
+
+Student B192:
+
+Student B193:
+
+Student B194:
+
+Student B195:
+
+Student B196:
+
+Student B197:
+
+Student B198:
+
+Student B199:
+
+Student B200:
+
+Student B201:
+
+Student B202:
+
+Student B203:
+
+Student B204:
+
+Student B205:
+
+Student B206:
+
+Student B207:
+
+Student B208:
+
+Student B209:
+
+Student B210:
+
+Student B211:
+
+Student B212:
+
+Student B213:
+
+Student B214:
+
+Student B215:
+
+Student B216:
+
+Student B217:
+
+Student B218:
+
+Student B219:
+
+Student B220:
+
+Student B221:
+
+Student B222:
+
+Student B223:
+
+Student B224:
+
+Student B225:
+
+Student B226:
+
+Student B227:
+
+Student B228:
+
+Student B229:
+
+Student B230:
+
+Student B231:
+
+Student B232:
+
+Student B233:
+
+Student B234:
+
+Student B235:
+
+Student B236:
+
+Student B237:
+
+Student B238:
+
+Student B239:
+
+Student B240:
+
+Student B241:
+
+Student B242:
+
+Student B243:
+
+Student B244:
+
+Student B245:
+
+Student B246:
+
+Student B247:
+
+Student B248:
+
+Student B249:
+
+Student B250:
+
+Student B251:
+
+Student B252:
+
+Student B253:
+
+Student B254:
+
+Student B255:
+
+Student B256:
+
+Student B257:
+
+Student B258:
+
+Student B259:
+
+Student B260:
+
+Student B261:
+
+Student B262:
+
+Student B263:
+
+Student B264:
+
+Student B265:
+
+Student B266:
+
+Student B267:
+
+Student B268:
+
+Student B269:
+
+Student B270:
+
+Student B271:
+
+Student B272:
+
+Student B273:
+
+Student B274:
+
+Student B275:
+
+Student B276:
+
+Student B277:
+
+Student B278:
+
+Student B279:
+
+Student B280:
+
+Student B281:
+
+Student B282:
+
+Student B283:
+
+Student B284:
+
+Student B285:
+
+Student B286:
+
+Student B287:
+
+Student B288:
+
+Student B289:
+
+Student B290:
+
+Student B291:
+
+Student B292:
+
+Student B293:
+
+Student B294:
+
+Student B295:
+
+Student B296:
+
+Student B297:
+
+Student B298:
+
+Student B299:
+
+Student B300:
+
