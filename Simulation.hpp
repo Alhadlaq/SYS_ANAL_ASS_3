@@ -33,5 +33,6 @@ void print_sample_std (FILE *out);
 void university_time_table(FILE *out);
 void courses_taken_by_students (FILE *out);
 int is_graduated (int student);
+void switch_room_if_required (int room, int slot);
 
 #endif

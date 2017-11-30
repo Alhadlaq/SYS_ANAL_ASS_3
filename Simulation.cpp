@@ -245,6 +245,8 @@ int is_graduated (int student)
 void building_manager(void)
 {
 	int i, j, x, course;
+    
+    /* cancel the classes with less than 3 students */
 	// for all the classrooms
 	for (i = 0; i < room_num; i++)
 	{
@@ -256,6 +258,7 @@ void building_manager(void)
 			{
 				// cancel the classroom
 				classrooms[i].alloc_flag[current_term][j] = FALSE;
+                classrooms[i].num_std[current_term][j] = 0;
 				classrooms[i].alloc_num[current_term]--;
 
 				//cancel the course for that term
@@ -267,10 +270,46 @@ void building_manager(void)
 				{
 					remove_course(classrooms[i].std_list[current_term][j][x], i, j, course);
 				}
-
 			}
 		}
 	}
+    
+    /* switch classrooms if needed */
+    for (i = 0; i < room_num; i++)
+    {
+        // for all the time slots (morning and afternoon)
+        for (j = 0; j < TIME_SLOT_NUM; j++)
+        {
+            switch_room_if_required(i, j);
+        }
+    }
+}
+
+void switch_room_if_required (int room, int slot)
+{
+    int i, tmp;
+    
+    for (i=0; i<room_num; i++)
+    {
+        if (classrooms[room].size > classrooms[i].size &&
+            classrooms[room].num_std[current_term][slot] < classrooms[i].num_std[current_term][slot])
+        {
+            // switch the rooms
+            tmp = classrooms[room].allocated[current_term][slot];
+            classrooms[room].allocated[current_term][slot] = classrooms[i].allocated[current_term][slot];
+            classrooms[i].allocated[current_term][slot] = tmp;
+            
+            tmp = classrooms[room].num_std[current_term][slot];
+            classrooms[room].num_std[current_term][slot] = classrooms[i].num_std[current_term][slot];
+            classrooms[i].num_std[current_term][slot] = tmp;
+            
+            if (!classrooms[room].alloc_flag[current_term][slot])
+            {
+                classrooms[room].alloc_flag[current_term][slot] = TRUE;
+                classrooms[i].alloc_flag[current_term][slot] = FALSE;
+            }
+        }
+    }
 }
 
 void remove_course(int student, int room, int slot, int course)
