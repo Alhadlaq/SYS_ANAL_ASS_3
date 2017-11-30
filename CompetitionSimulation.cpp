@@ -12,6 +12,7 @@ Edits:
 #include "main.hpp"
 #include "Simulation.hpp"
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 #define	DEBUGGER
 
@@ -132,6 +133,7 @@ void courses_taken_by_students (FILE *out)
             crs = students[h_std].taken_courses[j].crs_num;
             fprintf(out, "Term%d:\t%s\n", students[h_std].taken_courses[j].term_num+1, courses[crs].name);
         }
+        if(is_graduated(h_std)){fprintf(out, "Graduated\n");}
         fprintf(out, "\n");
     }
     }
@@ -415,6 +417,15 @@ int no_demand(void)
 	}
 	return TRUE;
 }
+int largest_roomfun(void){
+	int lg_room=0;
+		 for (int k; k<room_num;k++){
+		 	if (classrooms[k].size>lg_room){
+		 		lg_room=classrooms[k].size;
+			 }
+		 }
+		 return lg_room;
+}
 
 void register_course(void)
 {
@@ -423,13 +434,19 @@ void register_course(void)
 	int room;		// holds the index of the chosen room
 	int slot;		// chosen time slot
 	int tmp;		// temporary hold the idnex of a student
-
+    int largest_room=largest_roomfun();
 	// find the course of the highest demand
 	for (i = 0; i < course_num; i++)
 	{
-		if (courses[i].demand[current_term][current_itr] > courses[hd_crs].demand[current_term][current_itr])
-			hd_crs = i;
+		if (courses[i].demand[current_term][current_itr] > courses[hd_crs].demand[current_term][current_itr]){
+	
+			
+				hd_crs = i;
+			}
+	
+			
 	}
+	
 	courses[hd_crs].registered[current_term] = TRUE;
 
 	// find the classroom that best fits the students
@@ -569,8 +586,9 @@ void advise_students(void)
 		}
 
 		// if no course is found, then dont advise the student
-		if (!course_found)
+		if (!course_found){
 			students[i].term_tbl[current_term][current_itr].course = NO_COURSE;
+		}
 	}
 }
 
